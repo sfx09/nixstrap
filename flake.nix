@@ -43,7 +43,6 @@
           exit 1
       fi
 
-      sudo -i
       nix --experimental-features 'nix-command flakes' run github:nix-community/disko -- --flake $flake -m disko
       nixos-install --flake $flake --no-root-passwd
       reboot
