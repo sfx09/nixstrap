@@ -44,8 +44,8 @@
       fi
 
       nix --experimental-features 'nix-command flakes' run github:nix-community/disko -- --flake $flake -m disko
+      mount | grep /mnt
       nixos-install --flake $flake --no-root-passwd
-      reboot
     '';
   };
 }
